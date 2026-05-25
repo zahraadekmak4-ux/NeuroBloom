@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Calender.css'; 
+import './Calendar.css'; 
 
-export default function Calender() {
+export default function Calendar() {
   // 15 days of mental health challenges
   const activities = [
     { day: 1, task: "Take a 10-minute morning walk without your phone." },
