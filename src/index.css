@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+
+  .desktop-links {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: block !important;
+  }
+}

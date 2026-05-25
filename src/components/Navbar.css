@@ -1,0 +1,144 @@
+/* NAVBAR MAIN WRAPPER */
+.main-navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #ede9fe;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 16px 0;
+}
+
+/* CONTAINER CONSTRAINT */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* BRAND LOGO WITH BRAIN ICON */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 800;
+  color: #1f1b2e;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  z-index: 1001; /* Stays above mobile dropdown */
+}
+
+.nav-brain-icon {
+  font-size: 26px;
+  color: #7c3aed;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-logo:hover .nav-brain-icon {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+/* NAVIGATION LINKS GROUP (DESKTOP DEFAULT) */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* DEFAULT NAV ITEMS */
+.nav-item {
+  font-size: 15px;
+  font-weight: 600;
+  color: #4b5563;
+  text-decoration: none;
+  padding: 6px 4px;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover, .nav-item.active-link {
+  color: #7c3aed;
+}
+
+.nav-item.active-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 4px;
+  right: 4px;
+  height: 2px;
+  background-color: #7c3aed;
+  border-radius: 50px;
+}
+
+/* HAMBURGER TRIGGER BUTTON (HIDDEN ON DESKTOP) */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 30px; /* Big touch-friendly button */
+  color: #1f1b2e;
+  cursor: pointer;
+  z-index: 1001; /* Keeps toggle button on top */
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.mobile-menu-toggle:hover {
+  color: #7c3aed;
+}
+
+/* MOBILE AND TABLET RESPONSIVE SYSTEM */
+@media (max-width: 900px) {
+  .mobile-menu-toggle {
+    display: block; /* Show hamburger button now */
+  }
+
+  /* Transform link strip into an automated dropdown curtain drawer */
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-bottom: 1px solid #ede9fe;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    width: 100%;
+    max-height: 0; /* Keeps it completely hidden closed */
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
+    box-shadow: 0 10px 20px rgba(109, 40, 217, 0.04);
+  }
+
+  /* When active state triggers menu open */
+  .navbar-links.mobile-open {
+    max-height: 400px; /* Gives plenty of space for all 6 items */
+    padding: 15px 0;
+  }
+
+  /* Full width layout blocks on mobile views */
+  .nav-item {
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #fafafa;
+  }
+
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+
+  /* Remove desktop track lines on mobile devices */
+  .nav-item.active-link::after {
+    display: none;
+  }
+}

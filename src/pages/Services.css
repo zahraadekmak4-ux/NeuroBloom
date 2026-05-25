@@ -1,0 +1,162 @@
+.services-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.services-header h1 {
+  font-size: 42px;
+  color: #1f1b2e;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.services-main-instruction {
+  font-size: 17px;
+  color: #4b5563;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.7;
+  background-color: #fcfbff;
+  border: 1px dashed #c084fc;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.services-main-instruction strong {
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+.organizations-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.org-card {
+  background: white;
+  border-radius: 24px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(109, 40, 217, 0.02);
+  border: 1px solid #ede9fe;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  text-align: left;
+}
+
+.org-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(109, 40, 217, 0.06);
+}
+
+.org-badge {
+  display: inline-block;
+  background: #f5f2ff;
+  color: #7c3aed;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.org-card h2 {
+  font-size: 28px;
+  color: #1f1b2e;
+  margin: 0 0 15px 0;
+  font-weight: 800;
+}
+
+.org-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4b5563;
+  font-size: 15px;
+}
+
+.detail-icon {
+  font-size: 16px;
+}
+
+.detail-link {
+  color: #7c3aed;
+  text-decoration: none;
+}
+
+.detail-link:hover {
+  text-decoration: underline;
+}
+
+.phone-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #f5f2ff;
+  padding: 14px 28px;
+  border-radius: 16px;
+  transition: background 0.2s ease;
+}
+
+.phone-box:hover {
+  background: #ede9fe;
+}
+
+.phone-icon {
+  font-size: 20px;
+}
+
+.phone-number {
+  font-size: 20px;
+  font-weight: 800;
+  color: #7c3aed;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.phone-number:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    padding: 50px 20px;
+  }
+  
+  .services-header h1 {
+    font-size: 32px;
+  }
+
+  .org-card {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .org-details {
+    align-items: center;
+  }
+
+  .phone-box {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}

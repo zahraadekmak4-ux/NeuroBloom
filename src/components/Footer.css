@@ -1,0 +1,32 @@
+.footer {
+  background: linear-gradient(135deg, #1f1b2e, #13101c);
+  color: #fbfaff;
+  padding: 30px 20px;
+  margin-top: 100px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+.developer-credit {
+  margin: 0;
+  font-size: 15px;
+}
+
+/* Gives your signature name that premium violet pop */
+.developer-credit span {
+  color: white;
+  font-weight: bold;
+}
