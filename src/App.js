@@ -9,8 +9,8 @@ import StormyMinds from "./pages/StormyMinds";
 import HealingPathways from "./pages/HealingPathways";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
-import Calendar from "./pages/Calendar";
-import PageLayout from "./components/PageLayout"; // Import the wrapper
+import DailyCalendar from "./pages/DailyCalendar"; // 1. Imported the new page
+import PageLayout from "./components/PageLayout"; 
 
 import "./App.css";
 
@@ -27,7 +27,9 @@ function AnimatedRoutes() {
         <Route path="/healingpathways" element={<PageLayout><HealingPathways /></PageLayout>} />
         <Route path="/services" element={<PageLayout><Services /></PageLayout>} />
         <Route path="/contact" element={<PageLayout><Contact /></PageLayout>} />
-        <Route path="/calendar" element={<PageLayout><Calendar /></PageLayout>} />
+        
+        {/* 2. Added Daily Calendar with its animated layout wrapper */}
+        <Route path="/calendar" element={<PageLayout><DailyCalendar /></PageLayout>} />
       </Routes>
     </AnimatePresence>
   );

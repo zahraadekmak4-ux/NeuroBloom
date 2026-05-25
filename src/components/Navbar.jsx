@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaBrain, FaRegCalendarAlt } from "react-icons/fa"; // Imported a calendar icon just in case you want it later!
+import { FaBrain, FaRegCalendarAlt } from "react-icons/fa"; // We'll put this to use right now!
 import { IoMenuOutline, IoCloseOutline } from "react-icons/io5"; 
 import "./Navbar.css";
 
@@ -42,9 +42,9 @@ function Navbar() {
             Healing Pathways
           </NavLink>
           
-          {/* 🗓️ ADDED: Your brand new Mental Health Tracker link right here */}
+          {/* 🗓️ UPDATED: Added the icon inline to resolve the unused variable warning */}
           <NavLink to="/calendar" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
-            Daily Calendar
+            <FaRegCalendarAlt style={{ marginRight: '6px', transform: 'translateY(1px)' }} /> Daily Calendar
           </NavLink>
 
           <NavLink to="/services" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>

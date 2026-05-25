@@ -1,0 +1,314 @@
+.calendar-page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page Intro Header Layout Block */
+.calendar-page-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.calendar-pretitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #7c3aed;
+  background: #f5f2ff;
+  padding: 6px 14px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.calendar-page-header h1 {
+  font-size: 44px;
+  color: #1f1b2e;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  letter-spacing: -1px;
+}
+
+.calendar-intro-text {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Date Center Navigation UI Elements */
+.calendar-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 50px;
+  background: #ffffff;
+  border: 1px solid #ede9fe;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 24px;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px rgba(109, 40, 217, 0.02);
+}
+
+.calendar-navigation h2 {
+  font-size: 20px;
+  color: #1f1b2e;
+  font-weight: 700;
+  margin: 0;
+  min-width: 240px;
+  text-align: center;
+}
+
+.nav-btn {
+  background: #f5f2ff;
+  border: 1px solid #ede9fe;
+  color: #7c3aed;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-btn:hover {
+  background: #7c3aed;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Split Main Section Mosaic Column Grid Flexbox Blueprint */
+.calendar-layout-grid {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.schedule-section, .todo-section {
+  flex: 1;
+  background: white;
+  border: 1px solid #ede9fe;
+  border-radius: 24px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(109, 40, 217, 0.02);
+  text-align: left;
+}
+
+.schedule-section h2, .todo-section h2 {
+  font-size: 24px;
+  color: #1f1b2e;
+  margin: 0 0 6px 0;
+  font-weight: 700;
+}
+
+.section-subtext {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 25px 0;
+  line-height: 1.5;
+}
+
+/* Hourly Tracker Card Display Architecture */
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.schedule-card {
+  background: #fcfbfe;
+  border: 1px solid #ede9fe;
+  padding: 14px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  transition: border-color 0.2s ease;
+}
+
+.schedule-card:hover {
+  border-color: #ddd4fd;
+}
+
+.schedule-time {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7c3aed;
+  background: #f5f2ff;
+  padding: 5px 12px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.schedule-task {
+  margin: 0;
+  color: #4b5563;
+  font-size: 15px;
+  font-weight: 500;
+  padding-right: 25px;
+}
+
+/* Dynamic Add Submit Form Entry UI Components */
+.schedule-form, .todo-form {
+  display: flex;
+  gap: 10px;
+}
+
+.calendar-input {
+  background: #fdfbff;
+  border: 1px solid #ede9fe;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-size: 14px;
+  color: #1f1b2e;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+.calendar-input:focus {
+  border-color: #c084fc;
+  background: white;
+}
+
+.time-input {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.calendar-add-submit-btn {
+  background: #7c3aed;
+  color: white;
+  border: none;
+  padding: 0 16px;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition: background 0.2s ease;
+}
+
+.calendar-add-submit-btn:hover {
+  background: #6d28d9;
+}
+
+/* Micro Focus Intentions Checklist Component Design */
+.todo-list {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fdfbff;
+  border: 1px solid #ede9fe;
+  padding: 14px 18px;
+  border-radius: 14px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.todo-item.completed {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.todo-text {
+  font-size: 15px;
+  color: #4b5563;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  padding-right: 25px;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #166534;
+}
+
+/* Custom Interactive Utility Actions buttons inside list items */
+.todo-check-circle-btn, .item-delete-inline-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+}
+
+.todo-check-circle-btn {
+  color: #9ca3af;
+  transition: color 0.2s ease;
+}
+
+.todo-check-circle-btn:hover {
+  color: #7c3aed;
+}
+
+.todo-item.completed .todo-check-circle-btn {
+  color: #166534;
+}
+
+.item-delete-inline-btn {
+  color: #9ca3af;
+  position: absolute;
+  right: 18px;
+  transition: color 0.2s ease;
+}
+
+.item-delete-inline-btn:hover {
+  color: #ef4444;
+}
+
+/* Catchment feedback statuses text placeholder setups */
+.empty-section-text {
+  font-size: 14px;
+  color: #9ca3af;
+  font-style: italic;
+  margin: 10px 0;
+}
+
+/* Core Responsive Media Adjustments */
+@media (max-width: 850px) {
+  .calendar-layout-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .calendar-page-header h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule-form {
+    flex-direction: column;
+  }
+  
+  .time-input {
+    width: 100%;
+  }
+}
