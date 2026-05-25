@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaBrain } from "react-icons/fa";
-import { IoMenuOutline, IoCloseOutline } from "react-icons/io5"; // Premium icons for burger menu
+import { FaBrain, FaRegCalendarAlt } from "react-icons/fa"; // Imported a calendar icon just in case you want it later!
+import { IoMenuOutline, IoCloseOutline } from "react-icons/io5"; 
 import "./Navbar.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Helper function to close menu when a user clicks a nav link
   const closeMenu = () => setIsOpen(false);
 
   return (
@@ -42,6 +41,12 @@ function Navbar() {
           <NavLink to="/healingpathways" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
             Healing Pathways
           </NavLink>
+          
+          {/* 🗓️ ADDED: Your brand new Mental Health Tracker link right here */}
+          <NavLink to="/calendar" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
+            Daily Calendar
+          </NavLink>
+
           <NavLink to="/services" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
             Services
           </NavLink>

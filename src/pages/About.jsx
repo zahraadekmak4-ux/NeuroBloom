@@ -13,7 +13,7 @@ function About() {
           <h2>Our Vision</h2>
           <p>
             Mental health isn't always clear skies. Just like nature, our minds experience 
-            seasons—some calm, and some stormy. **NeuroBloom** was created to be a safe, 
+            seasons—some calm, and some stormy. "NeuroBloom" was created to be a safe, 
             anonymous, and comforting digital space where anyone can step in, catch their breath, 
             and understand what they are going through without judgment.
           </p>
