@@ -27,7 +27,7 @@ function AnimatedRoutes() {
         <Route path="/healingpathways" element={<PageLayout><HealingPathways /></PageLayout>} />
         <Route path="/services" element={<PageLayout><Services /></PageLayout>} />
         <Route path="/contact" element={<PageLayout><Contact /></PageLayout>} />
-        <Route path="/calendar" element={<PageLayout><Calendar /></PageLayout>} />
+        <Route path="/calendar" element={<Calendar />} />
       </Routes>
     </AnimatePresence>
   );
