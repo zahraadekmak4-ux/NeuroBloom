@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Calender.css'; // Make sure this path points correctly to your CSS file
+import './Calender.css'; 
 
 export default function Calender() {
   // 15 days of mental health challenges
