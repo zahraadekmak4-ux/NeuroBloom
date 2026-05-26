@@ -18,12 +18,13 @@ function Home() {
           <h1>Better Mind,<br />Better Life.</h1>
           <p className="hero-description">
             NeuroBloom is an intentional, compassionate space designed to help you decode 
-            your internal emotional weather, practice grounding techniques, and connect 
-            with certified professionals.
+            your internal emotional weather, practice grounding techniques, and maintain 
+            healthy mental balance.
           </p>
           <div className="hero-button-group">
-            <button className="btn-primary-explore" onClick={() => navigate("/stormyminds")}>
-              Explore Stormy Minds <IoArrowForwardOutline className="btn-arrow" />
+            {/* Navigates directly to your unified Mind Hub */}
+            <button className="btn-primary-explore" onClick={() => navigate("/mindhub")}>
+              Explore Mind Hub <IoArrowForwardOutline className="btn-arrow" />
             </button>
           </div>
         </div>
@@ -37,28 +38,31 @@ function Home() {
 
       {/* Lower Feature Grid: Three Core Architecture Pillars */}
       <section className="pillars-grid-section">
-        <div className="pillar-card" onClick={() => navigate("/stormyminds")}>
+        {/* Pillar 1: Points to Mind Hub */}
+        <div className="pillar-card" onClick={() => navigate("/mindhub")}>
           <div className="pillar-icon-wrapper storm-icon-bg">
             <FiCloudLightning className="pillar-icon-svg" />
           </div>
-          <h3>1. Stormy Minds</h3>
-          <p>Identify, break down, and understand complex emotional struggles like burnout, anxiety, and overthinking.</p>
+          <h3>1. Mind Hub</h3>
+          <p>Identify emotional struggles like burnout, overthinking, and isolation, and match them instantly with healing solutions.</p>
         </div>
 
-        <div className="pillar-card" onClick={() => navigate("/healingpathways")}>
+        {/* Pillar 2: Points to your Digital Exercises page */}
+        <div className="pillar-card" onClick={() => navigate("/exercises")}>
           <div className="pillar-icon-wrapper healing-icon-bg">
             <FiHeart className="pillar-icon-svg" />
           </div>
-          <h3>2. Healing Pathways</h3>
-          <p>Access somatic practices, grounding tools, and interactive breathing tools to calm your nervous system instantly.</p>
+          <h3>2. Digital Exercises</h3>
+          <p>Access somatic practices, grounding systems, and an interactive breathing circle tool to calm your nervous system.</p>
         </div>
 
-        <div className="pillar-card" onClick={() => navigate("/services")}>
+        {/* Pillar 3: Points to your Contact/Support section */}
+        <div className="pillar-card" onClick={() => navigate("/contact")}>
           <div className="pillar-icon-wrapper professional-icon-bg">
             <FiShield className="pillar-icon-svg" />
           </div>
-          <h3>3. Professional Support</h3>
-          <p>Direct, verified hotlines to certified clinics and counselors who are ready to give you dedicated talking space.</p>
+          <h3>3. Support & Contact</h3>
+          <p>Connect directly with developers, explore safe resources, and find professional help centers when you need an open space.</p>
         </div>
       </section>
     </div>
