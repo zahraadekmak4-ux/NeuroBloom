@@ -1,30 +1,23 @@
 import React from "react";
 
-// --- STORM IMPORTS ---
+// --- STORM IMPORTS (Kept exactly 5 to match the sliced array) ---
 import burnout from "../assets/burnout.png";
 import sadness from "../assets/sadness.jpg";
 import worry from "../assets/worry.webp";
 import anger from "../assets/anger.jpg";
 import numbness from "../assets/numbness.webp";
-import overthinking from "../assets/overthinking.jpg";
-import selfesteem from "../assets/selfesteem.jpg";
-import moodswings from "../assets/moodswings.webp";
 
-// --- HEALING IMPORTS ---
+// --- HEALING IMPORTS (Kept exactly 5 to match the sliced array) ---
 import breathing from "../assets/breathing.webp";
 import grounding from "../assets/grounding.png";
 import journaling from "../assets/journaling.jpg";
 import movement from "../assets/movement.png";
 import digitaldetox from "../assets/digitaldetox.jpg";
-import selfcompassion from "../assets/selfcompassion.webp";
-import water from "../assets/water.jpg";
-import routine from "../assets/routine.webp";
 
-// Unified CSS File (Create this file or merge your old ones)
 import "./MindHub.css"; 
 
 function MindHub() {
-  // We combine both sets of data into a single array of pairs!
+  // Sliced down to exactly 5 high-quality, high-impact pairs for clean screen layouts
   const mindData = [
     {
       id: "01",
@@ -99,51 +92,6 @@ function MindHub() {
         subtitle: "A Quick Digital Detox",
         desc: "Turn off your screens for just 15 minutes. Constantly checking social media or reading the news overloads an already tired, stressed mind.",
         image: digitaldetox
-      }
-    },
-    {
-      id: "06",
-      storm: {
-        title: "Overthinking at Night",
-        subtitle: "Insomnia & Sleep Struggles",
-        desc: "Lying wide awake in bed while the whole world is asleep. Your brain won't shut off because it keeps reminding you of old mistakes, making it impossible to rest.",
-        image: overthinking
-      },
-      healing: {
-        title: "Be Kind to Yourself",
-        subtitle: "Self-Compassion Break",
-        desc: "Talk to yourself the exact same way you would comfort your best friend. Remind yourself that it is completely okay to feel overwhelmed sometimes.",
-        image: selfcompassion
-      }
-    },
-    {
-      id: "07",
-      storm: {
-        title: "Disliking What You See in the Mirror",
-        subtitle: "Low Self-Esteem",
-        desc: "An internal critical voice that makes you feel like you aren't good enough. It focuses entirely on your flaws, making it hard to feel confident around others.",
-        image: selfesteem
-      },
-      healing: {
-        title: "Drink a Glass of Water",
-        subtitle: "Reset via Hydration",
-        desc: "Sip a cold glass of water slowly or step outside for fresh air. Small physical adjustments give your brain an immediate reset button.",
-        image: water
-      }
-    },
-    {
-      id: "08",
-      storm: {
-        title: "Sudden Mood Changes",
-        subtitle: "Emotional Swings",
-        desc: "Experiencing extreme shifts in your mood. Moving quickly from feeling super motivated and excited to suddenly crashing into absolute emotional exhaustion.",
-        image: moodswings
-      },
-      healing: {
-        title: "Do Just One Small Thing",
-        subtitle: "Build Low-Pressure Routine",
-        desc: "Pick one tiny task—like making your bed, washing a single dish, or clearing your desk. Completing it brings back a comforting sense of control.",
-        image: routine
       }
     }
   ];

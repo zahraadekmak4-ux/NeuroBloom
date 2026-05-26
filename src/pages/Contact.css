@@ -1,3 +1,5 @@
+/*Main Page Layout Containers*/
+
 .contact-page-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -46,13 +48,31 @@
   margin: 0 0 35px 0;
 }
 
-/* Personal Identity Block */
+/*Personal Identity Block (With Hover & Entry Motion) */
+
 .personal-card {
   background: white;
   border: 1px solid #ede9fe;
   border-radius: 24px;
   padding: 30px;
   box-shadow: 0 10px 30px rgba(109, 40, 217, 0.02);
+
+  /* Smooth interactive mouse transitions */
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+              border-color 0.4s ease;
+
+  /* Entry load animation config */
+  animation: contactSlideUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.1s; /* Shifting delay for dynamic balance */
+  opacity: 0;
+}
+
+/* Hover: Identity block floats upward subtly */
+.personal-card:hover {
+  transform: translateY(-5px);
+  border-color: #c084fc;
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.06);
 }
 
 .personal-badge {
@@ -135,10 +155,13 @@
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  /* Smooth transform for springy scale effects */
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              background-color 0.2s ease, 
+              box-shadow 0.2s ease;
 }
 
-/* Custom platform coloring */
+/* Custom platform hover physics */
 .instagram-btn {
   background: #fff5f5;
   color: #db2777;
@@ -146,7 +169,8 @@
 }
 .instagram-btn:hover {
   background: #fdf2f8;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 12px rgba(219, 39, 119, 0.1);
 }
 
 .linkedin-btn {
@@ -156,10 +180,12 @@
 }
 .linkedin-btn:hover {
   background: #e0f2fe;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 12px rgba(2, 132, 199, 0.1);
 }
 
-/* RIGHT COLUMN: Interactive Comfort/Quote Grid */
+/*RIGHT COLUMN: Quotes Glass Container (With Entry Motion) */
+
 .contact-quotes-section {
   flex: 0.8;
   width: 100%;
@@ -173,6 +199,11 @@
   text-align: center;
   box-shadow: 0 15px 40px rgba(109, 40, 217, 0.03);
   position: relative;
+
+  /* Automatic entry animation applied here */
+  animation: contactSlideUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.25s; /* Fires slightly after the personal card for narrative rhythm */
+  opacity: 0;
 }
 
 .quotes-icon-wrapper {
@@ -186,6 +217,12 @@
   border-radius: 50%;
   box-shadow: 0 8px 20px rgba(109, 40, 217, 0.06);
   margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+/* Micro interaction: icon spins slowly when glass container is active */
+.quotes-glass-box:hover .quotes-icon-wrapper {
+  transform: rotate(15deg) scale(1.05);
 }
 
 .sparkle-icon-react {
@@ -233,7 +270,21 @@
   font-style: normal;
 }
 
-/* Responsive configurations */
+/*Core Keyframes Movement Animation */
+
+@keyframes contactSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Responsive Adaptations*/
 @media (max-width: 850px) {
   .contact-main-layout {
     flex-direction: column;
@@ -246,6 +297,11 @@
   
   .personal-card {
     text-align: left;
+  }
+  
+  .quotes-glass-box, .personal-card {
+    /* Safe reduction of launch momentum parameters on flat viewport devices */
+    animation-delay: 0.1s !important; 
   }
 }
 

@@ -1,43 +1,41 @@
 # NeuroBloom
 
-NeuroBloom is an intentional, anonymous digital space designed to help individuals understand their internal emotional weather, practice grounding techniques, and connect with verified professional mental health resources.
+NeuroBloom is a mindful, low-pressure personalized digital sanctuary designed to help users structure their days, anchor their minds, and maintain sensory balance. Built with React 19, it offers a calming user experience tailored toward mental well-being and neurodivergent-friendly productivity.
 
-**Live Demo:** [neuro-bloom-hc76.vercel.app](https://neuro-bloom-hc76.vercel.app/)
+Live Demo: https://neuro-bloom-hc76.vercel.app/
 
+---
 
-## Project Features
+## Features
 
-The platform is structured into clear, supportive steps to maintain user focus:
+### Daily Blueprint (Routine Tracker)
+* **Chronological Flow:** Map out daily anchor tasks with an automatic 12-hour chronological sorting mechanism.
+* **Micro-Intentions Checklist:** Isolate macro thoughts into safe, low-pressure micro-routines that you can confidently control.
+* **Date-Specific Tracking:** Smart browser state binding allows you to navigate through days without losing data or spilling tasks into other dates.
+* **Local Persistence:** Data automatically syncs with localStorage so your routine is never lost on refresh.
 
-*   **Home Sanctuary:** An inviting landing layout introducing the core architectural pillars of the application[cite: 8].
-*   **Stormy Minds:** A section designed to identify and understand common emotional struggles like chronic stress, anxiety, and isolation[cite: 2].
-*   **Healing Pathways:** Access to instant, interactive coping tools—such as rhythmic box breathing, journaling, and the 5-4-3-2-1 grounding method—to stabilize the nervous system[cite: 2, 6].
-*   **Daily Calendar:** A personalized routine tracker with browser memory persistence via localStorage, helping users log low-pressure flow adjustments and micro intentions.
-*   **Professional Support Networks:** A verified directory of trusted hotlines and mental health centers (including Ta Heal, Build Psychology, and BrainStation Clinics) providing dedicated space for human connection[cite: 2, 10].
+### Digital Exercises
+* **Interactive Breathing Tool:** A dynamic guided breathing circle with smooth CSS state-controlled scale transitions.
+* **Sensory Grounding:** Calming micro-routines to help anchor focus and regulate anxiety in real-time.
 
+### Mind Hub
+* A dedicated resource directory curated with calming structural layouts and accessible wellness insights.
 
+---
 
-## Built With
+## Tech Stack
 
-This project utilizes a modern frontend stack focused on smooth, responsive, and secure user experiences:
+* **Frontend:** React 19, React Router DOM v7
+* **Styling:** Custom CSS3 with responsive Flexbox/Grid architectures and fluid animations
+* **Icons:** React Icons (io5, fa)
+* **Deployment:** Vercel
 
-*   **React:** Component-driven architecture for fast UI rendering[cite: 2, 4].
-*   **React Router DOM:** Client-side routing for dynamic page and tab switching[cite: 8].
-*   **Framer Motion:** Fluid entry and exit page transitions to maintain a calming visual rhythm.
-*   **React Icons:** Accessible iconography across navigation elements and information rows[cite: 4, 10].
-*   **CSS3:** Tailored grid layouts and structural variables styled around NeuroBloom's signature soothing purple spectrum[cite: 3, 5, 9].
+---
 
+## Local Setup Instructions
 
-
-## Getting Started Locally
-
-Follow these steps to clone this project and run it on your machine:
-
-### Prerequisites
-Ensure you have Node.js installed on your computer.
-
-### Installation
+If you want to run this project locally, follow these steps:
 
 1. **Clone the repository:**
-
-   git clone [https://github.com/zahraadekmak4-ux/NeuroBloom.git] (https://github.com/zahraadekmak4-ux/NeuroBloom.git)
+   ```bash
+   git clone [https://github.com/zahraadekmak4-ux/NeuroBloom.git](https://github.com/zahraadekmak4-ux/NeuroBloom.git)
