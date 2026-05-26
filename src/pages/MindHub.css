@@ -1,0 +1,100 @@
+.hub-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: sans-serif;
+}
+
+.hub-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hub-pairs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Individual side-by-side row container */
+.hub-row-card {
+  display: flex;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+}
+
+.hub-column {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Color thematic differences */
+.storm-side {
+  background-color: #fcfdfe; /* Subtle cool hue */
+}
+
+.healing-side {
+  background-color: #fafdfa; /* Subtle calming green/warm hue */
+}
+
+.hub-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.hub-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hub-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.storm-tag { background: #e53e3e; }
+.healing-tag { background: #38a169; }
+
+/* The Middle Arrow Section */
+.hub-connector {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  background: linear-gradient(to right, #fcfdfe, #fafdfa);
+}
+
+.connector-arrow {
+  font-size: 24px;
+  color: #a0aec0;
+}
+
+/* Responsive design for phones */
+@media (max-width: 768px) {
+  .hub-row-card {
+    flex-direction: column;
+  }
+  .hub-connector {
+    padding: 10px 0;
+  }
+  .connector-arrow {
+    transform: rotate(90deg); /* points down on mobile */
+  }
+}

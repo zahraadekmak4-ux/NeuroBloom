@@ -3,15 +3,16 @@ import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+// Page Components
 import Home from "./pages/Home";
 import About from "./pages/About";
-import StormyMinds from "./pages/StormyMinds";
-import HealingPathways from "./pages/HealingPathways";
+import MindHub from "./pages/MindHub"; // <-- 1. Imported our combined Problem/Solution Hub
+import DailyCalendar from "./pages/DailyCalendar"; 
+import DigitalExercises from "./pages/DigitalExercises"; // <-- 2. Imported the new exercises platform
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
-import DailyCalendar from "./pages/DailyCalendar"; // 1. Imported the new page
-import PageLayout from "./components/PageLayout"; 
 
+import PageLayout from "./components/PageLayout"; 
 import "./App.css";
 
 // Separate component inside BrowserRouter to safely access useLocation()
@@ -23,13 +24,18 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageLayout><Home /></PageLayout>} />
         <Route path="/about" element={<PageLayout><About /></PageLayout>} />
-        <Route path="/stormyminds" element={<PageLayout><StormyMinds /></PageLayout>} />
-        <Route path="/healingpathways" element={<PageLayout><HealingPathways /></PageLayout>} />
+        
+        {/* 🔄 MERGED ROUTE: Replaced separate pages with our single Mind Hub page */}
+        <Route path="/mindhub" element={<PageLayout><MindHub /></PageLayout>} />
+        
+        {/* 📅 CALENDAR ROUTE */}
+        <Route path="/calendar" element={<PageLayout><DailyCalendar /></PageLayout>} />
+        
+        {/* 🏋️‍♂️ NEW EXERCISES ROUTE: Safely nested inside your page layout wrapper */}
+        <Route path="/exercises" element={<PageLayout><DigitalExercises /></PageLayout>} />
+        
         <Route path="/services" element={<PageLayout><Services /></PageLayout>} />
         <Route path="/contact" element={<PageLayout><Contact /></PageLayout>} />
-        
-        {/* 2. Added Daily Calendar with its animated layout wrapper */}
-        <Route path="/calendar" element={<PageLayout><DailyCalendar /></PageLayout>} />
       </Routes>
     </AnimatePresence>
   );

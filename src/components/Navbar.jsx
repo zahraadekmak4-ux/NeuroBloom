@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaBrain, FaRegCalendarAlt } from "react-icons/fa"; // We'll put this to use right now!
+// Imported clean icons for every single page route
+import { 
+  FaBrain, 
+  FaHome, 
+  FaInfoCircle, 
+  FaCloudSun, 
+  FaRegCalendarAlt, 
+  FaRegCheckCircle, 
+  FaConciergeBell, 
+  FaEnvelope 
+} from "react-icons/fa"; 
 import { IoMenuOutline, IoCloseOutline } from "react-icons/io5"; 
 import "./Navbar.css";
 
@@ -8,6 +18,9 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeMenu = () => setIsOpen(false);
+
+  // Reusable inline style to keep all layout text perfectly aligned with its icon
+  const iconStyle = { marginRight: '8px', transform: 'translateY(1px)' };
 
   return (
     <nav className="main-navbar">
@@ -29,30 +42,42 @@ function Navbar() {
 
         {/* Navigation Links Group */}
         <div className={`navbar-links ${isOpen ? "mobile-open" : ""}`}>
-          <NavLink to="/" end className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
-            Home
-          </NavLink>
-          <NavLink to="/about" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
-            About
-          </NavLink>
-          <NavLink to="/stormyminds" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
-            Stormy Minds
-          </NavLink>
-          <NavLink to="/healingpathways" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
-            Healing Pathways
-          </NavLink>
           
-          {/* 🗓️ UPDATED: Added the icon inline to resolve the unused variable warning */}
-          <NavLink to="/calendar" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
-            <FaRegCalendarAlt style={{ marginRight: '6px', transform: 'translateY(1px)' }} /> Daily Calendar
+          {/* 🏠 Home */}
+          <NavLink to="/" end className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
+            <FaHome style={iconStyle} /> Home
           </NavLink>
 
+          {/* ℹ️ About */}
+          <NavLink to="/about" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
+            <FaInfoCircle style={iconStyle} /> About
+          </NavLink>
+          
+          {/* 🔄 Mind Hub (Stormy Minds + Healing Pathways) */}
+          <NavLink to="/mindhub" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
+            <FaCloudSun style={iconStyle} /> Mind Hub
+          </NavLink>
+          
+          {/* 📅 Daily Calendar */}
+          <NavLink to="/calendar" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
+            <FaRegCalendarAlt style={iconStyle} /> Daily Calendar
+          </NavLink>
+
+          {/* 🏋️‍♂️ Digital Exercises */}
+          <NavLink to="/exercises" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
+            <FaRegCheckCircle style={iconStyle} /> Digital Exercises
+          </NavLink>
+
+          {/* 🛎️ Services */}
           <NavLink to="/services" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
-            Services
+            <FaConciergeBell style={iconStyle} /> Services
           </NavLink>
+
+          {/* ✉️ Contact */}
           <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
-            Contact
+            <FaEnvelope style={iconStyle} /> Contact
           </NavLink>
+
         </div>
 
       </div>
