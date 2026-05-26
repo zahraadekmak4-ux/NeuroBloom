@@ -12,91 +12,95 @@ import "./DailyCalendar.css";
 function DailyCalendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
 
+  // Format date as an absolute key string (e.g., "2026-05-26") to bind data safely to specific dates
+  const dateKey = currentDate.toISOString().split("T")[0];
+
   // --- LOCAL STORAGE HANDLING ---
-  
-  // Load initial todos from localStorage or fallback to empty array
   const [todos, setTodos] = useState(() => {
     const savedTodos = localStorage.getItem("neurobloom_todos");
     return savedTodos ? JSON.parse(savedTodos) : [];
   });
 
-  // Load initial schedule flow or fallback to defaults
   const [schedule, setSchedule] = useState(() => {
     const savedSchedule = localStorage.getItem("neurobloom_schedule");
     return savedSchedule ? JSON.parse(savedSchedule) : [
-      { time: "08:00 AM", task: "Morning Grounding & Water" },
-      { time: "12:00 PM", task: "Midday Breathing Break" },
-      { time: "06:00 PM", task: "Digital Detox & Walk" },
+      { rawTime: "08:00", time: "08:00 AM", task: "Morning Grounding & Water" },
+      { rawTime: "12:00", time: "12:00 PM", task: "Midday Breathing Break" },
+      { rawTime: "18:00", time: "06:00 PM", task: "Digital Detox & Walk" },
     ];
   });
 
   const [newTodo, setNewTodo] = useState("");
   const [timeBlock, setTimeBlock] = useState({ time: "09:00", task: "" });
 
-  // Sync Todos to LocalStorage whenever they change
+  // Sync states to local storage securely
   useEffect(() => {
     localStorage.setItem("neurobloom_todos", JSON.stringify(todos));
   }, [todos]);
 
-  // Sync Schedule to LocalStorage whenever it changes
   useEffect(() => {
     localStorage.setItem("neurobloom_schedule", JSON.stringify(schedule));
   }, [schedule]);
 
-
   // --- CALENDAR ACTIONS ---
-
-  // Handle Date Navigation (Switching days)
   const changeDate = (days) => {
     const newDate = new Date(currentDate);
     newDate.setDate(newDate.getDate() + days);
     setCurrentDate(newDate);
   };
 
-  // Add low-pressure intention
   const handleAddTodo = (e) => {
     e.preventDefault();
     if (!newTodo.trim()) return;
-    setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }]);
+    // We append the dateKey so tasks don't spill over randomly into other calendar days
+    setTodos([...todos, { id: Date.now(), date: dateKey, text: newTodo, completed: false }]);
+    newTodo = "";
     setNewTodo("");
   };
 
-  // Toggle intention completion state
   const toggleTodo = (id) => {
     setTodos(todos.map(todo => todo.id === id ? { ...todo, completed: !todo.completed } : todo));
   };
 
-  // Delete intention
   const deleteTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
-  // Add custom schedule hourly flow block
   const handleAddSchedule = (e) => {
     e.preventDefault();
     if (!timeBlock.task.trim()) return;
     
-    // Convert 24h clock input to a gentle, readable 12h format
-    const [hours, minutes] = timeBlock.time.split(":");
+    // Convert 24h clock input to a gentle, readable 12h format display string
+    const [hoursStr, minutes] = timeBlock.time.split(":");
+    const hours = parseInt(hoursStr, 10);
     const ampm = hours >= 12 ? "PM" : "AM";
     const formattedHours = hours % 12 || 12;
-    const formattedTime = `${formattedHours}:${minutes} ${ampm}`;
+    // Pads single digits nicely (e.g. 9:00 -> 09:00 AM) for neat visual layout rows
+    const formattedTime = `${formattedHours.toString().padStart(2, '0')}:${minutes} ${ampm}`;
 
-    const updatedSchedule = [...schedule, { time: formattedTime, task: timeBlock.task }];
+    const newBlock = {
+      date: dateKey,
+      rawTime: timeBlock.time, // Saved as raw "18:30" string
+      time: formattedTime,     // Saved as "06:30 PM" string
+      task: timeBlock.task
+    };
+
+    const updatedSchedule = [...schedule, newBlock];
     
-    // Sort schedule chronological block items systematically
-    updatedSchedule.sort((a, b) => {
-      return a.time.localeCompare(b.time);
-    });
+    // FIX: Chronological sorting using raw 24-hour strings ("08:00" vs "18:30")
+    updatedSchedule.sort((a, b) => a.rawTime.localeCompare(b.rawTime));
 
     setSchedule(updatedSchedule);
     setTimeBlock({ time: "09:00", task: "" });
   };
 
-  // Delete hourly flow block
-  const deleteScheduleItem = (indexToDelete) => {
-    setSchedule(schedule.filter((_, idx) => idx !== indexToDelete));
+  const deleteScheduleItem = (idToKill) => {
+    setSchedule(schedule.filter(item => item.date !== dateKey ? true : schedule.indexOf(item) !== idToKill));
   };
+
+  // Filter global state collections down to only item nodes mapped to our active viewing date
+  const filteredTodos = todos.filter(todo => todo.date === dateKey || !todo.date);
+  const filteredSchedule = schedule.filter(item => item.date === dateKey || !item.date);
 
   return (
     <div className="calendar-page-container">
@@ -135,14 +139,22 @@ function DailyCalendar() {
           <p className="section-subtext">Structure hours safely to maintain sensory balance and focus layout rhythm.</p>
           
           <div className="schedule-list">
-            {schedule.length === 0 ? (
-              <p className="empty-section-text">Your schedule timeline is completely clear.</p>
+            {filteredSchedule.length === 0 ? (
+              <p className="empty-section-text">Your schedule timeline is completely clear for this date.</p>
             ) : (
-              schedule.map((item, index) => (
+              filteredSchedule.map((item, index) => (
                 <div key={index} className="schedule-card">
                   <span className="schedule-time">{item.time}</span>
                   <p className="schedule-task">{item.task}</p>
-                  <button onClick={() => deleteScheduleItem(index)} className="item-delete-inline-btn" aria-label="Delete block">
+                  <button 
+                    onClick={() => {
+                      // Find direct index position inside raw unbounded global reference state array
+                      const trueIdx = schedule.findIndex(s => s === item);
+                      deleteScheduleItem(trueIdx);
+                    }} 
+                    className="item-delete-inline-btn" 
+                    aria-label="Delete block"
+                  >
                     <IoTrashOutline />
                   </button>
                 </div>
@@ -192,10 +204,10 @@ function DailyCalendar() {
           </form>
 
           <div className="todo-list">
-            {todos.length === 0 ? (
+            {filteredTodos.length === 0 ? (
               <p className="empty-section-text">No high stakes here. Add a small task when you feel fully ready.</p>
             ) : (
-              todos.map(todo => (
+              filteredTodos.map(todo => (
                 <div key={todo.id} className={`todo-item ${todo.completed ? "completed" : ""}`}>
                   <button onClick={() => toggleTodo(todo.id)} className="todo-check-circle-btn" aria-label="Toggle Complete status">
                     <IoCheckmarkCircleOutline />
