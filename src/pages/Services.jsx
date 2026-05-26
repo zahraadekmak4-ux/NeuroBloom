@@ -10,7 +10,7 @@ function Services() {
       email: "info@taheal.org"
     },
     {
-      name: "Build Psychology",
+      name: "Build Consultancy Circle",
       availability: "All days (9:00 am - 8:00 pm)",
       number: "+961 3 881 554",
       email: "contact@buildpsychology.com"
