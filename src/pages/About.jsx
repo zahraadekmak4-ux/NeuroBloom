@@ -1,3 +1,4 @@
+import React from "react";
 import "./About.css";
 
 function About() {
@@ -19,15 +20,22 @@ function About() {
           </p>
         </div>
 
+        {/* This second about-section automatically captures the animated container styles from your CSS */}
         <div className="about-section">
           <h2>How It Works</h2>
           <p>
-            We structured this platform into simple, intentional steps to support you:
+            We structured this platform into simple, intentional sectors to support you:
           </p>
           <ul className="about-features">
-            <li><strong>Stormy Minds:</strong> Learn to identify and understand common emotional struggles like chronic stress, deep anxiety, and isolation.</li>
-            <li><strong>Healing Pathways:</strong> Access instant interactive coping tools, like our rhythmic breathing circle, to ground your nervous system.</li>
-            <li><strong>Support Networks:</strong> Find verified, trusted professional helplines when you need human support.</li>
+            <li>
+              <strong>1. Mind Hub:</strong> Our core sanctuary where deep emotional struggles are directly paired with actionable, real-time coping strategies.
+            </li>
+            <li>
+              <strong>2. Digital Exercises:</strong> Access to interactive grounding systems and a rhythmic breathing circle tool engineered to instantly calm your nervous system.
+            </li>
+            <li>
+              <strong>3. Support Networks:</strong> Find verified, trusted professional helplines when you need open human support.
+            </li>
           </ul>
         </div>
       </div>

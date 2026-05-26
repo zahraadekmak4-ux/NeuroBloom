@@ -1,10 +1,10 @@
-/*Page Layout & Background Setup */
+/*Page Layout & Background Setup*/
 
 .about-container { 
   max-width: 800px; 
   margin: 0 auto; 
   padding: 60px 20px; 
-  font-family: sans-serif; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: left; 
 }
 
@@ -47,7 +47,7 @@
   line-height: 1.7; 
 }
 
-/* The "How It Works"  */
+/* The "How It Works" Animated Container Box */
 
 .about-section:nth-child(2) {
   background: #ffffff;
@@ -61,7 +61,7 @@
   opacity: 0; /* Stays hidden until the browser executes the animation */
 }
 
-/* List Features (Inner Rows) */
+/* List Features (Inner Rows)*/
 
 .about-features { 
   list-style: none; 
@@ -97,7 +97,7 @@
   box-shadow: 0 4px 12px rgba(124, 58, 237, 0.04);
 }
 
-/* Keyframes for Container Animation */
+/*Keyframes for Container Animation */
 
 @keyframes slideUpContainer {
   0% {
@@ -110,7 +110,7 @@
   }
 }
 
-/*responsive*/
+/*Responsive Adjustments (Mobile & Tablets) */
 
 @media (max-width: 768px) {
   .about-container {
