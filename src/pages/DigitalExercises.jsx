@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaBrain, FaHeartbeat, FaPenFancy, FaEye, FaLungs, FaExchangeAlt } from "react-icons/fa";
+import { FaEye, FaLungs, FaExchangeAlt } from "react-icons/fa";
 import "./DigitalExercises.css";
 
 function DigitalExercises() {
