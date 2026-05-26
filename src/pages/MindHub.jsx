@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // --- STORM IMPORTS ---
 import burnout from "../assets/burnout.png";

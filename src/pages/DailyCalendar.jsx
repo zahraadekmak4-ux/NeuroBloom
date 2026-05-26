@@ -54,8 +54,7 @@ function DailyCalendar() {
     if (!newTodo.trim()) return;
     // We append the dateKey so tasks don't spill over randomly into other calendar days
     setTodos([...todos, { id: Date.now(), date: dateKey, text: newTodo, completed: false }]);
-    newTodo = "";
-    setNewTodo("");
+    setNewTodo(""); // Keep this, delete the raw newTodo = ""; line
   };
 
   const toggleTodo = (id) => {

@@ -96,7 +96,7 @@
 /* Dynamic Animation Triggers controlled via React State */
 .breath-circle.inhale {
   transform: scale(1.35);
-  background-color: #v0fff4; 
+  background-color: #e6fffa; 
   border-color: #63b3ed;
 }
 
