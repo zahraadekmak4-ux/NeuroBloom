@@ -87,7 +87,9 @@ function DailyCalendar() {
     const updatedSchedule = [...schedule, newBlock];
     
     // FIX: Chronological sorting using raw 24-hour strings ("08:00" vs "18:30")
-    updatedSchedule.sort((a, b) => a.rawTime.localeCompare(b.rawTime));
+    updatedSchedule.sort((a, b) =>
+  (a.rawTime || "").localeCompare(b.rawTime || "")
+);
 
     setSchedule(updatedSchedule);
     setTimeBlock({ time: "09:00", task: "" });
