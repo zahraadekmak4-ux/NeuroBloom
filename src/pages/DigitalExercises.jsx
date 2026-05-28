@@ -181,35 +181,35 @@ function DigitalExercises() {
             <p className="practice-sub">Interact with your direct surroundings to pull your consciousness out of a panic spiral.</p>
             
             <div className="grounding-scroll-box">
-              <h3>👀 Name 5 things you can see right now:</h3>
+              <h3>Name 5 things you can see right now:</h3>
               <div className="input-row">
                 {groundingCheck.see.map((val, idx) => (
                   <input key={idx} type="text" placeholder={`Object ${idx+1}`} value={val} onChange={(e) => handleGroundingInput("see", idx, e.target.value)} />
                 ))}
               </div>
 
-              <h3>✋ Name 4 things you can physically touch:</h3>
+              <h3>Name 4 things you can physically touch:</h3>
               <div className="input-row">
                 {groundingCheck.touch.map((val, idx) => (
                   <input key={idx} type="text" placeholder={`Texture ${idx+1}`} value={val} onChange={(e) => handleGroundingInput("touch", idx, e.target.value)} />
                 ))}
               </div>
 
-              <h3>👂 Name 3 distinct sounds around you:</h3>
+              <h3>Name 3 distinct sounds around you:</h3>
               <div className="input-row">
                 {groundingCheck.hear.map((val, idx) => (
                   <input key={idx} type="text" placeholder={`Sound ${idx+1}`} value={val} onChange={(e) => handleGroundingInput("hear", idx, e.target.value)} />
                 ))}
               </div>
 
-              <h3>👃 Name 2 environmental smells:</h3>
+              <h3>Name 2 environmental smells:</h3>
               <div className="input-row">
                 {groundingCheck.smell.map((val, idx) => (
                   <input key={idx} type="text" placeholder={`Scent ${idx+1}`} value={val} onChange={(e) => handleGroundingInput("smell", idx, e.target.value)} />
                 ))}
               </div>
 
-              <h3>👅 Name 1 thing you can taste (or your mouth's state):</h3>
+              <h3>Name 1 thing you can taste (or your mouth's state):</h3>
               <div className="input-row">
                 {groundingCheck.taste.map((val, idx) => (
                   <input key={idx} type="text" placeholder="Taste element" value={val} onChange={(e) => handleGroundingInput("taste", idx, e.target.value)} />
