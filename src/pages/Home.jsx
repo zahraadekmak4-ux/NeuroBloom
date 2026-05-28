@@ -15,7 +15,7 @@ function Home() {
           <span className="hero-pill-badge">
             <FiShield className="badge-icon-svg" /> Your Safe Digital Sanctuary
           </span>
-          <h1>Better Mind,<br />Better Life.</h1>
+          <h1>Calm Mind.<br />Bright Future.</h1>
           <p className="hero-description">
             NeuroBloom is an intentional, compassionate space designed to help you decode 
             your internal emotional weather, practice grounding techniques, and maintain 
