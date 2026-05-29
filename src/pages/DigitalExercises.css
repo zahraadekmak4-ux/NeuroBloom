@@ -46,9 +46,9 @@
 }
 
 .p-tab.active {
-  background: #7c3aed;
+  background: #7c3aedcd;
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.553);
 }
 
 /* Practice Canvas Component Cards */
@@ -84,8 +84,8 @@
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background: #ebf8ff;
-  border: 4px solid #c4b5fd;
+  background: #f0e2f3;
+  border: 4px solid #e6cbeb;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,7 +103,7 @@
 .breath-circle.hold {
   transform: scale(1.35);
   background-color: #ede9fe;
-  border-color: #8b5cf6;
+  border-color: #9780cc;
 }
 
 .breath-circle.exhale {
