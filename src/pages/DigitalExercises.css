@@ -12,7 +12,7 @@
 
 .exercises-header h1 {
   font-size: 2.4rem;
-  color: #1a202c;
+  color: #1f1b2e;
   margin-bottom: 12px;
 }
 
@@ -46,9 +46,9 @@
 }
 
 .p-tab.active {
-  background: #3182ce;
+  background: #7c3aed;
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(49, 130, 206, 0.3);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
 }
 
 /* Practice Canvas Component Cards */
@@ -85,7 +85,7 @@
   height: 180px;
   border-radius: 50%;
   background: #ebf8ff;
-  border: 4px solid #bee3f8;
+  border: 4px solid #c4b5fd;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,43 +93,52 @@
   transition: transform 4s linear, background-color 1s ease;
 }
 
-/* Dynamic Animation Triggers controlled via React State */
+/* Dynamic states */
 .breath-circle.inhale {
   transform: scale(1.35);
-  background-color: #e6fffa; 
-  border-color: #63b3ed;
+  background-color: #f5f3ff;
+  border-color: #a78bfa;
 }
 
 .breath-circle.hold {
   transform: scale(1.35);
-  background-color: #feebc8;
-  border-color: #f6ad55;
+  background-color: #ede9fe;
+  border-color: #8b5cf6;
 }
 
 .breath-circle.exhale {
   transform: scale(1.0);
-  background-color: #edf2f7;
-  border-color: #cbd5e0;
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
 }
 
+/* Inner glow pink effect */
 .breath-circle-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: radial-gradient(
+    circle,
+    rgba(252, 231, 243, 0.35) 0%,
+    transparent 60%
+  );
+  padding: 10px;
+  border-radius: 50%;
 }
 
 .phase-text {
   font-weight: bold;
   font-size: 1.3rem;
-  color: #2b6cb0;
+  color: #1f1f1f; 
 }
 
 .counter-text {
   font-size: 1.1rem;
-  color: #4a5568;
+  color: #2d2d2d; 
   margin-top: 4px;
 }
 
+/* Instructions */
 .breathing-instructions {
   display: flex;
   gap: 16px;
@@ -145,13 +154,13 @@
 }
 
 .inst.active {
-  background: #ebf8ff;
-  color: #2b6cb0;
+  background: #f5f3ff;
+  color: #6d28d9;
   font-weight: bold;
-  border: 1px solid #90cdf4;
+  border: 1px solid #c4b5fd;
 }
 
-/* --- CBT & GROUNDING WRITERS --- */
+/* CBT & GROUNDING */
 .cbt-wizard-progress {
   display: flex;
   gap: 12px;
@@ -172,7 +181,7 @@
 }
 
 .step-dot.active {
-  background: #3182ce;
+  background: #7c3aed;
   color: white;
 }
 
@@ -187,7 +196,8 @@
   color: #4a5568;
 }
 
-.wizard-step textarea, .input-row input {
+.wizard-step textarea,
+.input-row input {
   padding: 14px;
   border: 1px solid #cbd5e0;
   border-radius: 10px;
@@ -202,19 +212,21 @@
   resize: none;
 }
 
-.wizard-step textarea:focus, .input-row input:focus {
-  border-color: #3182ce;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+.wizard-step textarea:focus,
+.input-row input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
 }
 
-/* Control Row setups */
+/* Buttons */
 .btn-row {
   display: flex;
   gap: 12px;
 }
 
-.primary-action-btn, .wizard-btn {
-  background: #3182ce;
+.primary-action-btn,
+.wizard-btn {
+  background: #7c3aed;
   color: white;
   border: none;
   padding: 12px 28px;
@@ -240,9 +252,11 @@
   font-weight: 600;
 }
 
-.wizard-btn.final { background: #38a169; }
+.wizard-btn.final {
+  background: #6d28d9;
+}
 
-/* Grounding Matrix Elements */
+/* Grounding */
 .grounding-scroll-box h3 {
   font-size: 1rem;
   color: #4a5568;
@@ -261,9 +275,19 @@
   font-size: 0.9rem;
 }
 
-.space-top { margin-top: 30px; width: 100%; }
+.space-top {
+  margin-top: 30px;
+  width: 100%;
+}
 
+/* Responsive */
 @media (max-width: 600px) {
-  .practice-tabs { flex-direction: column; }
-  .breathing-instructions { flex-direction: column; gap: 8px; }
+  .practice-tabs {
+    flex-direction: column;
+  }
+
+  .breathing-instructions {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
