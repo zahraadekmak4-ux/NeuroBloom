@@ -2,39 +2,49 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  font-family: sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #fafafa;
 }
 
 .hub-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+}
+
+.hub-header h1 {
+  font-size: 2.5rem;
+  color: #1a202c;
+  margin-bottom: 12px;
+}
+
+.hub-intro {
+  color: #718096;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
 .hub-pairs-list {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 35px;
 }
 
-/* Individual side-by-side row container */
+/* Row card container */
 .hub-row-card {
   display: flex;
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid #eaeaea;
-  /* Ultra smooth transition when the entire row lifts */
-  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
-              box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
-              border-color 0.4s ease;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
+  border: 1px solid #edf2f7;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* ROW HOVER: The whole combined container lifts up gracefully */
 .hub-row-card:hover {
   transform: translateY(-5px);
-  border-color: #cbd5e1;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
 }
 
 .hub-column {
@@ -42,42 +52,30 @@
   padding: 24px;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
-  position: relative;
-  /* Transition background shifts if needed */
-  transition: background-color 0.3s ease;
 }
 
-/* Subtle highlights when hovering specific sides */
-.storm-side:hover {
-  background-color: #f7fafc; 
-}
+.storm-side { background-color: #fcfdfd; }
+.healing-side { background-color: #fdfdfc; }
 
-.healing-side:hover {
-  background-color: #f5faf5;
-}
-
-/* Image wrapper setup */
+/* Desktop Image Wrapper */
 .hub-img-wrapper {
   position: relative;
   width: 100%;
-  height: 200px;
-  border-radius: 8px;
-  overflow: hidden; /* Crucial: traps the image zoom inside the borders */
-  margin-bottom: 16px;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 18px;
 }
 
 .hub-img-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Smooth transform speed for the picture magnification */
-  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: transform 0.5s ease;
 }
 
-/* COLUMN HOVER: When a user targets a column, only its specific image zooms */
 .hub-column:hover .hub-img-wrapper img {
-  transform: scale(1.05); /* Clean, professional focus zoom */
+  transform: scale(1.04);
 }
 
 .hub-tag {
@@ -85,53 +83,114 @@
   top: 12px;
   left: 12px;
   padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 700;
   color: white;
-  z-index: 2; /* Keeps tags above the scaling image */
 }
 
-.storm-tag { background: #e53e3e; }
-.healing-tag { background: #38a169; }
+.storm-tag { background: #ef4444; }
+.healing-tag { background: #10b981; }
 
-/* The Middle Arrow Section */
+/* Typography */
+.hub-text-content h3 {
+  font-size: 12px;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.hub-text-content h2 {
+  font-size: 20px;
+  color: #2d3748;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.hub-text-content p {
+  font-size: 14px;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+/* Connector Section */
 .hub-connector {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
-  background: linear-gradient(to right, #fcfdfe, #fafdfa);
+  padding: 0 15px;
+  background: #f7fafc;
 }
 
 .connector-arrow {
-  font-size: 24px;
-  color: #a0aec0;
-  transition: transform 0.3s ease;
+  font-size: 22px;
+  color: #cbd5e1;
 }
 
-/* Interactive accent: Arrow pulses slightly when the row is active */
 .hub-row-card:hover .connector-arrow {
-  color: #7c3aed; /* Switches arrow color to matching purple */
+  color: #7c3aed;
 }
 
-/* Responsive design for phones - clean and spacious */
+/*  TELEPHONE / MOBILE PREMIUM FIX (COMPACT & SLEEK)  */
 @media (max-width: 768px) {
   .hub-row-card {
-    flex-direction: column;
+    flex-direction: column; /* stacked columns grid */
+    padding: 12px;
+    gap: 6px;
   }
-  .hub-row-card:hover {
-    transform: translateY(-3px); /* Slightly less vertical movement on mobile screens */
+
+  .hub-column {
+    padding: 8px;
+    flex-direction: row; /* ➔ MAGIC EFFECT: Image and text sit side by side! */
+    align-items: center;
+    gap: 14px;
   }
+
+  /* El-soura landscape sghire mratbe b-al-3ard, bala ma tin2ass */
+  .hub-img-wrapper {
+    width: 95px; 
+    height: 75px; /* Cinematic clean landscape crop */
+    border-radius: 8px;
+    margin-bottom: 0; /* aligned vertically with text */
+    flex-shrink: 0;
+  }
+
+  /* Tag fits perfectly below or hides on ultra small screens */
+  .hub-tag {
+    font-size: 8px;
+    padding: 2px 6px;
+    top: 4px;
+    left: 4px;
+  }
+
+  .hub-text-content {
+    flex: 1;
+  }
+
+  .hub-text-content h3 {
+    font-size: 9px;
+  }
+
+  .hub-text-content h2 {
+    font-size: 14px; /* Crisp and easy to look at */
+    margin-bottom: 2px;
+  }
+
+  .hub-text-content p {
+    font-size: 11px; /* Fits instantly on one phone page */
+    line-height: 1.3;
+    color: #718096;
+  }
+
   .hub-connector {
-    padding: 15px 0;
+    padding: 4px 0;
+    background: transparent;
   }
+
   .connector-arrow {
-    transform: rotate(90deg); /* points down on mobile */
-  }
-  /* Keeps arrow rotating correctly even under hover styles on mobile */
-  .hub-row-card:hover .connector-arrow {
-    transform: rotate(90deg) scale(1.1); 
+    transform: rotate(90deg); /* points down nicely */
+    font-size: 14px;
+    color: #a0aec0;
   }
 }
