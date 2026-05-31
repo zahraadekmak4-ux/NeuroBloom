@@ -12,7 +12,7 @@ import "./DailyCalendar.css";
 function DailyCalendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
 
-  // Format date as an absolute key string (e.g., "2026-05-26") to bind data safely to specific dates
+  // Format date as an absolute key string to bind data safely to specific dates
   const dateKey = currentDate.toISOString().split("T")[0];
 
   // --- LOCAL STORAGE HANDLING ---
@@ -52,7 +52,7 @@ function DailyCalendar() {
   const handleAddTodo = (e) => {
     e.preventDefault();
     if (!newTodo.trim()) return;
-    // We append the dateKey so tasks don't spill over randomly into other calendar days
+    // append the dateKey so tasks don't spill over randomly into other calendar days
     setTodos([...todos, { id: Date.now(), date: dateKey, text: newTodo, completed: false }]);
     setNewTodo(""); // Keep this, delete the raw newTodo = ""; line
   };
@@ -74,7 +74,7 @@ function DailyCalendar() {
     const hours = parseInt(hoursStr, 10);
     const ampm = hours >= 12 ? "PM" : "AM";
     const formattedHours = hours % 12 || 12;
-    // Pads single digits nicely (e.g. 9:00 -> 09:00 AM) for neat visual layout rows
+    // Pads single digits for neat visual layout rows
     const formattedTime = `${formattedHours.toString().padStart(2, '0')}:${minutes} ${ampm}`;
 
     const newBlock = {

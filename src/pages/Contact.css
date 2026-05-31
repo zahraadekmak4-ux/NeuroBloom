@@ -48,7 +48,7 @@
   margin: 0 0 35px 0;
 }
 
-/*Personal Identity Block (With Hover & Entry Motion) */
+/*Personal Identity Block */
 
 .personal-card {
   background: white;
@@ -161,7 +161,7 @@
               box-shadow 0.2s ease;
 }
 
-/* Custom platform hover physics */
+
 .instagram-btn {
   background: #fff5f5;
   color: #db2777;

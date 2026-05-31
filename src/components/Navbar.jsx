@@ -43,37 +43,37 @@ function Navbar() {
         {/* Navigation Links Group */}
         <div className={`navbar-links ${isOpen ? "mobile-open" : ""}`}>
           
-          {/* 🏠 Home */}
+          {/* Home */}
           <NavLink to="/" end className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
             <FaHome style={iconStyle} /> Home
           </NavLink>
 
-          {/* ℹ️ About */}
+          {/* About */}
           <NavLink to="/about" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
             <FaInfoCircle style={iconStyle} /> About
           </NavLink>
           
-          {/* 🔄 Mind Hub (Stormy Minds + Healing Pathways) */}
+          {/* Mind Hub (Stormy Minds + Healing Pathways) */}
           <NavLink to="/mindhub" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
             <FaCloudSun style={iconStyle} /> Mind Hub
           </NavLink>
           
-          {/* 📅 Daily Calendar */}
+          {/* Daily Calendar */}
           <NavLink to="/calendar" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
             <FaRegCalendarAlt style={iconStyle} /> Daily Calendar
           </NavLink>
 
-          {/* 🏋️‍♂️ Digital Exercises */}
+          {/* Digital Exercises */}
           <NavLink to="/exercises" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
             <FaRegCheckCircle style={iconStyle} /> Digital Exercises
           </NavLink>
 
-          {/* 🛎️ Services */}
+          {/* Services */}
           <NavLink to="/services" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
             <FaConciergeBell style={iconStyle} /> Services
           </NavLink>
 
-          {/* ✉️ Contact */}
+          {/* Contact */}
           <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-item active-link" : "nav-item"} onClick={closeMenu}>
             <FaEnvelope style={iconStyle} /> Contact
           </NavLink>

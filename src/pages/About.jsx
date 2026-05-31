@@ -20,7 +20,7 @@ function About() {
           </p>
         </div>
 
-        {/* This second about-section automatically captures the animated container styles from your CSS */}
+        {/* This second about-section automatically captures the animated container styles from CSS */}
         <div className="about-section">
           <h2>How It Works</h2>
           <p>

@@ -82,7 +82,7 @@
   display: none;
   background: none;
   border: none;
-  font-size: 30px; /* Big touch-friendly button */
+  font-size: 30px; 
   color: #1f1b2e;
   cursor: pointer;
   z-index: 1001; /* Keeps toggle button on top */
@@ -94,10 +94,10 @@
   color: #7c3aed;
 }
 
-/* MOBILE AND TABLET RESPONSIVE SYSTEM */
+/* MOBILE RESPONSIVE SYSTEM */
 @media (max-width: 900px) {
   .mobile-menu-toggle {
-    display: block; /* Show hamburger button now */
+    display: block; /* Show hamburger button */
   }
 
   /* Transform link strip into an automated dropdown curtain drawer */

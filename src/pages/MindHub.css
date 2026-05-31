@@ -132,7 +132,7 @@
   color: #7c3aed;
 }
 
-/*  TELEPHONE / MOBILE PREMIUM FIX (COMPACT & SLEEK)  */
+/*  MOBILE PREMIUM FIX (COMPACT & SLEEK)  */
 @media (max-width: 768px) {
   .hub-row-card {
     flex-direction: column; /* stacked columns grid */
@@ -142,12 +142,11 @@
 
   .hub-column {
     padding: 8px;
-    flex-direction: row; /* ➔ MAGIC EFFECT: Image and text sit side by side! */
+    flex-direction: row; /* magic effect: Image and text sit side by side */
     align-items: center;
     gap: 14px;
   }
 
-  /* El-soura landscape sghire mratbe b-al-3ard, bala ma tin2ass */
   .hub-img-wrapper {
     width: 95px; 
     height: 75px; /* Cinematic clean landscape crop */
@@ -156,7 +155,7 @@
     flex-shrink: 0;
   }
 
-  /* Tag fits perfectly below or hides on ultra small screens */
+  
   .hub-tag {
     font-size: 8px;
     padding: 2px 6px;
@@ -189,7 +188,7 @@
   }
 
   .connector-arrow {
-    transform: rotate(90deg); /* points down nicely */
+    transform: rotate(90deg); /* points down  */
     font-size: 14px;
     color: #a0aec0;
   }

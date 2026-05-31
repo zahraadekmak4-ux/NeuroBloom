@@ -22,7 +22,7 @@ function Home() {
             healthy mental balance.
           </p>
           <div className="hero-button-group">
-            {/* Navigates directly to your unified Mind Hub */}
+            {/* Navigates directly Mind Hub */}
             <button className="btn-primary-explore" onClick={() => navigate("/mindhub")}>
               Explore Mind Hub <IoArrowForwardOutline className="btn-arrow" />
             </button>
@@ -36,7 +36,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Lower Feature Grid: Three Core Architecture Pillars */}
+      
       <section className="pillars-grid-section">
         {/* Pillar 1: Points to Mind Hub */}
         <div className="pillar-card" onClick={() => navigate("/mindhub")}>
@@ -47,7 +47,7 @@ function Home() {
           <p>Identify emotional struggles like burnout, overthinking, and isolation, and match them instantly with healing solutions.</p>
         </div>
 
-        {/* Pillar 2: Points to your Digital Exercises page */}
+        {/* Pillar 2: Points to  Digital Exercises page */}
         <div className="pillar-card" onClick={() => navigate("/exercises")}>
           <div className="pillar-icon-wrapper healing-icon-bg">
             <FiHeart className="pillar-icon-svg" />
@@ -56,7 +56,7 @@ function Home() {
           <p>Access somatic practices, grounding systems, and an interactive breathing circle tool to calm your nervous system.</p>
         </div>
 
-        {/* Pillar 3: Points to your Contact/Support section */}
+        {/* Pillar 3: Points to  Contact section */}
         <div className="pillar-card" onClick={() => navigate("/contact")}>
           <div className="pillar-icon-wrapper professional-icon-bg">
             <FiShield className="pillar-icon-svg" />
